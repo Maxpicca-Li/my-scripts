@@ -14,7 +14,7 @@ Required:
     mode  : mt | v3 | v3sim
 
 Optional:
-    tag   : extra suffix for output dir (required when git is dirty)
+    tag   : extra suffix for SPEC_DIR (required when git is dirty)
 
 Defaults:
     server_list="$server_list"
