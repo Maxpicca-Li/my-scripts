@@ -38,7 +38,7 @@ git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${Z
 # autojump install 结束后会提示内容到.zshrc中，照做即可
 
 # 5. 修改 .zshrc
-sed -i 's/^plugins=.*/plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)/' ~/.zshrc || true
+sed -i 's/^plugins=.*/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc || true
 sed -i 's/^ZSH_THEME=.*/ZSH_THEME="rkj-repos"/' ~/.zshrc || true
 
 echo "Setup finished. Please restart terminal or run: source ~/.zshrc"
