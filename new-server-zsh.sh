@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -ex
 
 echo "Current shell: $SHELL"
 
@@ -10,10 +10,13 @@ if ! command -v zsh >/dev/null 2>&1; then
 fi
 
 # 2. 设置默认 shell
-if [[ "$SHELL" != *zsh ]]; then
-  chsh -s "$(which zsh)"
-  echo "Default shell set to zsh, please re-login after script finishes."
-fi
+case "$SHELL" in
+  *zsh) ;;
+  *)
+    chsh -s "$(which zsh)"
+    echo "Default shell set to zsh, please re-login after script finishes."
+    ;;
+esac
 
 # 3. 安装 Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
