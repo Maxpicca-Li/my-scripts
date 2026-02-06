@@ -1,0 +1,8 @@
+hostname=`hostname`
+/usr/bin/curl -s \
+    -X POST \
+    https://api.telegram.org/bot${TG_API_TOKEN}/sendMessage \
+    -d text="\[${hostname}@${PWD##*/}@$?] $*" \
+    -d parse_mode="markdown" \
+    -d chat_id=${TG_CHAT_ID} \
+    > /dev/null 2>&1
